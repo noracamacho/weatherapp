@@ -4,7 +4,7 @@ import img04d from './images/04d.jpg'
 import backgroundImages from './helpers/backgroundImages'
 import './App.css'
 
-
+const idKey = '0c5cfcfe9fc145d412e30508b4a89137';
 
 function App() {
   const [data, setData] = useState({});
@@ -18,7 +18,7 @@ function App() {
         let lat = pos.coords.latitude;
         let lon = pos.coords.longitude;
         
-    axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=0c5cfcfe9fc145d412e30508b4a89137&units=${units}`)
+    axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${idKey}&units=${units}`)
       .then(response => setData(response.data))
       .then(console.log(data))
       .catch(error => console.log('error', error));

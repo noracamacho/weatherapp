@@ -1,0 +1,140 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  /* ************************************ */
+  
+  p {
+    font-size: 1.1rem;
+  }
+  h1 {
+    font-size: 5.5rem;
+  }
+  .app {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.4);
+    color: whitesmoke;
+  }
+  
+  .app:before {
+    content: '';
+    /* background: url('./assets/sunset.jpg') no-repeat center center/cover; */
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+  
+  .app .search {
+    text-align: center;
+    padding: 1rem;
+  }
+  
+  .app input {
+    padding: .7rem 1.5rem;
+    font-size: 1.2rem;
+    border-radius: 25px;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    background: rgba(255, 255, 255, 0.1);
+    color: #f8f8f8;
+  }
+  
+  ::placeholder {
+    color: #f8f8f8;
+  }
+  
+  .container {
+    max-width: 350px;
+    height: 585px;
+    margin: 0 auto;
+    position: relative;
+    top: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-content: center;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+  
+  }
+  
+  .app .top {
+    width: 90%;
+    margin: 1rem auto;
+    text-align: center;
+    align-content: center;
+    border-radius: 12px;
+    background-color: rgba(255, 255, 255, 0.2);
+    /* margin: 0 auto; */
+  }
+
+  .buttons__container {
+    display: flex;
+    flex-direction: row;
+    width: 7rem;
+    position: relative;
+    top: 0px;
+    justify-content: space-evenly;
+    margin: 1rem auto;
+  }
+  
+  button{
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+    height: 2rem;
+    width: 5rem;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    padding-inline: .5rem;
+    margin-bottom: 1rem;
+  }
+
+  .location p {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: .7rem;
+  }
+  
+  .iconImage {
+    position: relative;
+    width: 12rem;
+    height: 12rem;
+    bottom: 30px;
+  }
+  
+  .app .despcription {
+    position: relative;
+    bottom: 20px;
+    text-transform: capitalize;
+    font-weight: bolder;
+  }
+  
+  .app .bottom {
+    position: relative;
+    display: flex;
+    justify-content: space-evenly;
+    text-align: center;
+    width: 90%;
+    margin: .7rem auto;
+    padding: 1rem;
+    padding-inline: .6rem;
+    border-radius: 12px;
+    background-color: rgba(255, 255, 255, 0.2);
+    bottom: 10px;
+  }
+  
+  .bold {
+    font-weight: 600;
+  }

@@ -1,14 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios' 
-import backgroundImages from './helpers/backgroundImages'
+import backgroundImages from './data/backgroundImages'
 import './App.css'
 
 const idKey = '0c5cfcfe9fc145d412e30508b4a89137';
-// let imageBack = (`${data?.weather?.[0].description}${icon}`).replace(' ', '');
-// const scatteredclouds03n = new URL('./images/scatteredclouds03n.jpg', import.meta.url)
-// console.log(imageBack);
-// document.body.style.backgroundImage = `url(${backgroundImages[icon]})`;
-
 
 function App() {
   const [data, setData] = useState({});

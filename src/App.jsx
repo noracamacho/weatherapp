@@ -5,6 +5,11 @@ import backgroundImages from './helpers/backgroundImages'
 import './App.css'
 
 const idKey = '0c5cfcfe9fc145d412e30508b4a89137';
+// let imageBack = (`${data?.weather?.[0].description}${icon}`).replace(' ', '');
+// const scatteredclouds03n = new URL('./images/scatteredclouds03n.jpg', import.meta.url)
+// console.log(imageBack);
+// document.body.style.backgroundImage = `url(${backgroundImages[icon]})`;
+
 
 function App() {
   const [data, setData] = useState({});
@@ -36,6 +41,8 @@ function App() {
     }
   }, [data]);
 
+  console.log(backgroundImages[icon])
+
    // metric
  function changeUnits() {
   let currentTemp;
@@ -58,7 +65,7 @@ function App() {
   return (
     <div className='app' style={{  
       backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.45), 
-      rgba(0, 0, 0, 0.45)), url(${img04d})`,
+      rgba(0, 0, 0, 0.45)), url(${backgroundImages[icon]})`,
       backgroundPosition: 'center',
       backgroundSize: 'cover',
       backgroundRepeat: 'no-repeat'

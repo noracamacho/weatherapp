@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import axios from 'axios'
-import img04d from './images/04d.jpg'
+import axios from 'axios' 
 import backgroundImages from './helpers/backgroundImages'
 import './App.css'
 

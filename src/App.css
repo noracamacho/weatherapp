@@ -10,13 +10,30 @@
   }
   
   /* ************************************ */
+  Spinner {
+    background-color: black !important;
+    width: 100vw;
+    height: 100vh;
+  }
   
   p {
     font-size: 1rem;
     font-weight: bold;
+    margin: 0;
   }
   h1 {
     font-size: 5rem;
+  }
+  .app__spinner {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background-image: url('../src/images/sunset.jpg') !important; */
+    background-color: rgba(190, 176, 176, 0.4);
+    /* color: light; */
   }
   .app {
     width: 100vw;
@@ -131,8 +148,8 @@
     text-align: center;
     width: 93%;
     margin: .7rem auto;
-    padding: 1rem;
-    padding-inline: .6rem;
+    padding: .5rem;
+    padding-inline: .2rem;
     border-radius: 12px;
     background-color: rgba(255, 255, 255, 0.2);
     bottom: 10px;

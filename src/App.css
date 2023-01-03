@@ -39,6 +39,9 @@
     /* background-image: url('../src/images/sunset.jpg') !important; */
     background-color: rgba(190, 176, 176, 0.4);
     color: whitesmoke;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
   }
   
   /* .app:before {
@@ -134,6 +137,11 @@
   }
   .temp {
     height: 15rem;
+  }
+
+  .wi {
+    font-weight: bold;
+    font-size: 1.5rem;
   }
   
   .iconImage {

@@ -5,7 +5,6 @@ import countryCode from "./assets/data/countryCode";
 import "weather-icons/css/weather-icons.css";
 import Footer from "./components/Footer";
 import SpinnerC from "./components/SpinnerC";
-import defaultIcon from './assets/images/defaultIcon.png';
 import "./App.css";
 
 const idKey = "0c5cfcfe9fc145d412e30508b4a89137";
@@ -47,7 +46,6 @@ function App() {
       setIconImage(`https://openweathermap.org/img/wn/${icon}@2x.png`);
     }
   }, [icon])
-
 
   // °C to °F
   function changeUnits() {

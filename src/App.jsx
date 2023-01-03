@@ -5,6 +5,7 @@ import countryCode from "./assets/data/countryCode";
 import "weather-icons/css/weather-icons.css";
 import Footer from "./components/Footer";
 import SpinnerC from "./components/SpinnerC";
+import defaultIcon from './assets/images/defaultIcon.png';
 import "./App.css";
 
 const idKey = "0c5cfcfe9fc145d412e30508b4a89137";
@@ -17,6 +18,7 @@ function App() {
   const [tempFeelsLike, setTempFeelsLike] = useState(0);
   const [currentDate, setCurrentDate] = useState(0);
   const [time, setTime] = useState(0);
+  const [iconImage, setIconImage] = useState();
 
   useEffect(() => {
     navigator.geolocation.getCurrentPosition((pos) => {
@@ -39,6 +41,13 @@ function App() {
       setTime(new Date(data.dt * 1000).toLocaleString('en-us', { hour: "2-digit", minute: "2-digit" }));
     }
   }, [data]);
+ 
+  useEffect(() => {
+    if(icon) {
+      setIconImage(`https://openweathermap.org/img/wn/${icon}@2x.png`);
+    }
+  }, [icon])
+
 
   // °C to °F
   function changeUnits() {
@@ -55,7 +64,7 @@ function App() {
 
   return (
     <>
-      {!icon ? (
+      {!iconImage ? (
         <SpinnerC />
       ) : (
         <div className="app" style={{ backgroundImage: `linear-gradient(rgba(30, 30, 30, 0.45), rgba(30, 30, 30, 0.45)), url(${backgroundImages[icon]})`}}>
@@ -73,7 +82,8 @@ function App() {
               </div>
               <div className="temp">
                 <h1>{temp}{units === "imperial" ? "°F" : "°C"}</h1>
-                <img className="iconImage" src={`https://openweathermap.org/img/wn/${icon}@2x.png`} alt="weather icon" />
+                {/* <img className="iconImage" src={`https://openweathermap.org/img/wn/${icon}@2x.png`} alt="weather icon" /> */}
+                <img className="iconImage" src={iconImage} alt="weather icon" />
               </div>
               <div className="despcription">
                 <p>{data?.weather?.[0].description}</p>

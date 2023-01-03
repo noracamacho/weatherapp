@@ -40,8 +40,15 @@ function App() {
       setTemp(data.main?.temp.toFixed(0));
       setTempFeelsLike(data?.main?.feels_like.toFixed(0));
       setCurrentDate(new Date(data.dt * 1000).toLocaleString('en-us', {  weekday: 'long', year: "numeric", month: "long", day: "numeric" }));
+      // createDate()
     }
   }, [data]);
+
+  // Date
+  // function createDate() {
+  //   let day = new Date(data.dt * 1000).toLocaleString('en-us', {  weekday: 'long', year: "numeric", month: "long", day: "numeric" });
+  //   setCurrentDate(day);
+  // }
 
   // °C to °F
   function changeUnits() {
@@ -87,20 +94,39 @@ function App() {
               </div>
               <div className="location">
                 <p>{`${data?.name}, ${countryCode[data.sys?.country]}`}</p>
+                {/* {icon && (
+                  <p>{`${data?.name}, ${countryCode[data.sys?.country]}`}</p>
+                )} */}
               </div>
               <div className="date">
                 <p>{currentDate}</p>
+                {/* {icon && (
+                  <p>{currentDate}</p>
+                )} */}
               </div>
               <div className="temp">
                 <h1>
                     {temp}
                     {units === "imperial" ? "°F" : "°C"}
                   </h1>
+                {/* {icon && (
+                  <h1>
+                    {temp}
+                    {units === "imperial" ? "°F" : "°C"}
+                  </h1>
+                )} */}
                 <img
                     className="iconImage"
                     src={`https://openweathermap.org/img/wn/${icon}@2x.png`}
                     alt="weather icon"
                   />
+                {/* {icon && (
+                  <img
+                    className="iconImage"
+                    src={`https://openweathermap.org/img/wn/${icon}@2x.png`}
+                    alt="weather icon"
+                  />
+                )} */}
               </div>
               <div className="despcription">
                 <p>{data?.weather?.[0].description}</p>

@@ -71,7 +71,7 @@
   
   .container {
     max-width: 350px;
-    height: 560px;
+    height: 565px;
     margin: 0 auto;
     position: relative;
     top: 10%;
@@ -113,13 +113,19 @@
     font-size: 1rem;
     font-weight: 600;
     padding-inline: .5rem;
-    margin-bottom: 1rem;
+    /* margin-bottom: 0; */
   }
 
   .location p {
     font-size: 1.4rem;
     font-weight: bold;
-    margin-bottom: .7rem;
+    max-width: 20rem;
+    max-height: 3rem;
+  }
+  .date p {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
     max-width: 20rem;
     max-height: 3rem;
   }
@@ -128,12 +134,12 @@
     position: relative;
     width: 10rem;
     height: 10rem;
-    bottom: 30px;
+    bottom: 50px;
   }
   
   .app .despcription {
     position: relative;
-    bottom: 20px;
+    bottom: 30px;
     text-transform: capitalize;
     font-weight: bolder;
   }
@@ -149,7 +155,7 @@
     padding-inline: .2rem;
     border-radius: 12px;
     background-color: rgba(255, 255, 255, 0.2);
-    bottom: 4px;
+    bottom: 10px;
   }
   
   .bold {

@@ -15,7 +15,7 @@
     font-size: 1.1rem;
   }
   h1 {
-    font-size: 5.5rem;
+    font-size: 5rem;
   }
   .app {
     width: 100vw;
@@ -102,15 +102,17 @@
   }
 
   .location p {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     font-weight: bold;
     margin-bottom: .7rem;
+    max-width: 20rem;
+    max-height: 3rem;
   }
   
   .iconImage {
     position: relative;
-    width: 12rem;
-    height: 12rem;
+    width: 10rem;
+    height: 10rem;
     bottom: 30px;
   }
   

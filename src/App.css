@@ -81,6 +81,7 @@
     align-content: center;
     background-color: rgba(255, 255, 255, 0.3);
     border-radius: 12px;
+    margin-bottom: 10rem;
   }
   
   .app .top {
@@ -153,4 +154,27 @@
   
   .bold {
     font-weight: 600;
+  }
+
+  .footer {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    /* bottom: -6rem; */
+    text-align: center;
+  }
+
+  .footer p {
+    font-size: .85rem;
+    font-weight: normal;
+    word-spacing: 3px;
+  }
+
+  .footer p a {
+    text-decoration: none;
+    font-size: 1rem;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    word-spacing: normal;
   }

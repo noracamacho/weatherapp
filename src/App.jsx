@@ -96,7 +96,7 @@ function App() {
                 {icon && (
                   <img
                     className="iconImage"
-                    src={`http://openweathermap.org/img/wn/${icon}@2x.png`}
+                    src={`https://openweathermap.org/img/wn/${icon}@2x.png`}
                     alt="weather icon"
                   />
                 )}
@@ -133,6 +133,10 @@ function App() {
                 <p>Wind Speed</p>
               </div>
             </div>
+          </div>
+          <div className="footer">
+            <p>Built by <a href="https://www.linkedin.com/in/noraelisacamacho/" target="_blank">Nora Camacho</a> for <a href="https://www.academlo.com" target="_blank">Academlo</a> Bootcamp:</p>
+            <p>Programación Web Full-Stack y Ciencias de Computación</p>
           </div>
         </div>
       )}

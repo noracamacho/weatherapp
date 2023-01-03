@@ -31,9 +31,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    /* background-image: url('../src/images/sunset.jpg') !important; */
-    background-color: rgba(190, 176, 176, 0.4);
-    /* color: light; */
   }
   .app {
     width: 100vw;
@@ -68,13 +65,13 @@
     color: #f8f8f8;
   } */
   
-  ::placeholder {
+  /* ::placeholder {
     color: #f8f8f8;
-  }
+  } */
   
   .container {
     max-width: 350px;
-    height: 580px;
+    height: 560px;
     margin: 0 auto;
     position: relative;
     top: 15%;
@@ -82,13 +79,12 @@
     flex-direction: column;
     justify-content: space-between;
     align-content: center;
-    background-color: rgba(255, 255, 255, 0.25);
+    background-color: rgba(255, 255, 255, 0.3);
     border-radius: 12px;
-  
   }
   
   .app .top {
-    width: 93%;
+    width: 98%;
     margin: 1rem auto;
     text-align: center;
     align-content: center;
@@ -146,13 +142,13 @@
     display: flex;
     justify-content: space-evenly;
     text-align: center;
-    width: 93%;
+    width: 98%;
     margin: .7rem auto;
     padding: .5rem;
     padding-inline: .2rem;
     border-radius: 12px;
     background-color: rgba(255, 255, 255, 0.2);
-    bottom: 10px;
+    bottom: 4px;
   }
   
   .bold {

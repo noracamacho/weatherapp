@@ -3,7 +3,6 @@ import axios from "axios";
 import backgroundImages from "./data/backgroundImages";
 import countryCode from "./data/countryCode";
 import "weather-icons/css/weather-icons.css";
-import ClipLoader from "react-spinners/ClipLoader";
 import { Spinner } from "reactstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
@@ -16,8 +15,6 @@ function App() {
   const [icon, setIcon] = useState();
   const [temp, setTemp] = useState(0);
   const [tempFeelsLike, setTempFeelsLike] = useState(0);
-  // const [loading, setLoading] = useState(true);
-  // const [img, setImg] = useState(sunset);
 
   useEffect(() => {
     navigator.geolocation.getCurrentPosition((pos) => {
@@ -40,7 +37,6 @@ function App() {
       setIcon(data?.weather?.[0].icon);
       setTemp(data.main?.temp.toFixed(0));
       setTempFeelsLike(data?.main?.feels_like.toFixed(0));
-      // setLoading(false);
     }
   }, [data]);
 
@@ -64,9 +60,9 @@ function App() {
   }
   return (
     <>
-      {icon === undefined ? (
+      {!icon ? (
         <div className="app__spinner" style={{ backgroundColor: "#eff4f8", alignContent: 'center' }}>
-          <Spinner color="dark" size='large' />
+          <Spinner type="grow" color="info" style={{width: '4rem', height: '4rem'}}/>
         </div>
       ) : (
         <div

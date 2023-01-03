@@ -121,25 +121,31 @@
     font-weight: bold;
     max-width: 20rem;
     max-height: 3rem;
+    /* margin-bottom: 1rem;  */
   }
-  .date p {
+
+  .date__time {
+    margin-bottom: 1rem;
+  }
+  .date__time p {
     font-size: 1.1rem;
     font-weight: bold;
-    margin-bottom: 1rem;
-    max-width: 20rem;
     max-height: 3rem;
+  }
+  .temp {
+    height: 15rem;
   }
   
   .iconImage {
     position: relative;
-    width: 10rem;
-    height: 10rem;
+    width: 9rem;
+    height: 9rem;
     bottom: 50px;
   }
   
   .app .despcription {
     position: relative;
-    bottom: 30px;
+    bottom: 40px;
     text-transform: capitalize;
     font-weight: bolder;
   }

@@ -22,7 +22,6 @@ function App() {
     navigator.geolocation.getCurrentPosition((pos) => {
       let lat = pos.coords.latitude;
       let lon = pos.coords.longitude;
-
       axios
         .get(
           `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${idKey}&units=${units}`
@@ -40,8 +39,11 @@ function App() {
       setTemp(data.main?.temp.toFixed(0));
       setTempFeelsLike(data?.main?.feels_like.toFixed(0));
       setCurrentDate(new Date(data.dt * 1000).toLocaleString('en-us', {  weekday: 'long', year: "numeric", month: "long", day: "numeric" }));
+      setTime(new Date(data.dt * 1000).toLocaleString('en-us', { hour: "2-digit", minute: "2-digit" }))
+      // toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })
     }
   }, [data]);
+  console.log(time)
 
   // °C to °F
   function changeUnits() {
@@ -88,8 +90,9 @@ function App() {
               <div className="location">
                 <p>{`${data?.name}, ${countryCode[data.sys?.country]}`}</p>
               </div>
-              <div className="date">
+              <div className="date__time">
                 <p>{currentDate}</p>
+                <p>{time}</p>
               </div>
               <div className="temp">
                 <h1>

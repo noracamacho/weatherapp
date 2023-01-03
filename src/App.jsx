@@ -68,7 +68,7 @@ function App() {
         <div
           className="app"
           style={{
-            backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url(${backgroundImages[icon]})`,
+            backgroundImage: `linear-gradient(rgba(30, 30, 30, 0.45), rgba(30, 30, 30, 0.45)), url(${backgroundImages[icon]})`,
             backgroundPosition: "center",
             backgroundSize: "cover",
             backgroundRepeat: "no-repeat",

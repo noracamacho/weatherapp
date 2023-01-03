@@ -1,3 +1,4 @@
+
 import clearsky01d from '../images/01d.jpg';
 import clearsky01n from '../images/01n.jpg';
 import fewclouds02d from '../images/02d.jpg';
@@ -17,7 +18,7 @@ import snow13n from '../images/13n.jpg';
 import mist50d from '../images/50d.jpg';
 import mist50n from '../images/50d.jpg';
 
-const backgroundImages = {   
+const backgroundImages = {  
         '01d': clearsky01d,
         '01n': clearsky01n,
         '02d': fewclouds02d,

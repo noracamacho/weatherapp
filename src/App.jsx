@@ -3,6 +3,7 @@ import axios from 'axios'
 import backgroundImages from './data/backgroundImages'
 import countryCode from './data/countryCode'
 import 'weather-icons/css/weather-icons.css';
+import sunset from './images/sunset.jpg'
 import './App.css'
 
 const idKey = '0c5cfcfe9fc145d412e30508b4a89137';
@@ -10,10 +11,10 @@ const idKey = '0c5cfcfe9fc145d412e30508b4a89137';
 function App() {
   const [data, setData] = useState({});
   const [units, setUnits] = useState('metric'); 
-  const [icon, setIcon] = useState('');
+  const [icon, setIcon] = useState();
   const [temp, setTemp] = useState(0);
   const [tempFeelsLike, setTempFeelsLike] = useState(0);
-  const [img, setImg] = useState('');
+  const [img, setImg] = useState(sunset);
 
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(pos => {
@@ -34,13 +35,8 @@ function App() {
       setIcon(data?.weather?.[0].icon);
       setTemp(data.main?.temp.toFixed(0));
       setTempFeelsLike(data?.main?.feels_like.toFixed(0))
-      setImg(data?.weather?.[0].main + data?.weather?.[0].icon);
-      // console.log(img);
     }
   }, [data]);
-
-  // console.log(backgroundImages[icon])
-  // console.log(countryCode[data.sys?.country]);
 
    // °C to °F
  function changeUnits() {
@@ -60,31 +56,22 @@ function App() {
       setUnits('metric');
     }
   }
-
+  // rgba(0, 0, 0, 0.45)), url(${backgroundImages[icon]})`,
   // let date = new Date();
-  // console.log(date.toISOString().split('T')[0])
-  
+  // console.log(date.toISOString().split('T')[0])  
   return (
-    <div className='app' style={{  
-      backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.45), 
-      rgba(0, 0, 0, 0.45)), url(${backgroundImages[icon]})`,
-      backgroundPosition: 'center',
-      backgroundSize: 'cover',
-      backgroundRepeat: 'no-repeat'
-    }}>
+    <div className='app' style={{ backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url(${backgroundImages[icon]})`, backgroundPosition: 'center', backgroundSize: 'cover', backgroundRepeat: 'no-repeat'}}>
       <div className="container">
         <div className="top">
           <div className="buttons__container">
             <button onClick={changeUnits}>{units === 'imperial' ? '°C' : '°F'}</button>
          </div>
           <div className="location">
-            <p>{`${data?.name}, ${countryCode[data.sys?.country]}`}</p>
+            {icon && (<p>{`${data?.name}, ${countryCode[data.sys?.country]}`}</p>)}
           </div>
           <div className="temp">
-            <h1>{temp}{units === 'imperial' ? '°F' : '°C'}</h1>
-            {
-              icon && (<img className='iconImage' src={`http://openweathermap.org/img/wn/${icon}@2x.png`} alt="weather icon" />)
-            }
+            { icon && ( <h1>{temp}{units === 'imperial' ? '°F' : '°C'}</h1>) }
+            { icon && (<img className='iconImage' src={`http://openweathermap.org/img/wn/${icon}@2x.png`} alt="weather icon" />) }
           </div>
             <div className="despcription">
               <p>{data?.weather?.[0].description}</p>

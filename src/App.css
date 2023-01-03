@@ -22,22 +22,22 @@
     width: 100vw;
     height: 100vh;
     position: relative;
-    background-color: rgba(0, 0, 0, 0.4);
+    /* background-image: url('../src/images/sunset.jpg') !important; */
+    background-color: rgba(190, 176, 176, 0.4);
     color: whitesmoke;
   }
   
-  .app:before {
+  /* .app:before {
     content: '';
-    /* background: url('./assets/sunset.jpg') no-repeat center center/cover; */
     position: absolute;
     width: 100vw;
     height: 100vh;
     top: 0;
     left: 0;
     z-index: -1;
-  }
+  } */
   
-  .app .search {
+  /* .app .search {
     text-align: center;
     padding: 1rem;
   }
@@ -49,7 +49,7 @@
     border: 1px solid rgba(255, 255, 255, 0.8);
     background: rgba(255, 255, 255, 0.1);
     color: #f8f8f8;
-  }
+  } */
   
   ::placeholder {
     color: #f8f8f8;
@@ -57,15 +57,15 @@
   
   .container {
     max-width: 350px;
-    height: 585px;
+    height: 580px;
     margin: 0 auto;
     position: relative;
-    top: 10%;
+    top: 15%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-content: center;
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0.25);
     border-radius: 12px;
   
   }

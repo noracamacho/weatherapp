@@ -27,7 +27,7 @@ function App() {
           `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${idKey}&units=${units}`
         )
         .then((response) => setData(response.data))
-        .then(console.log(data))
+        // .then(console.log(data))
         .catch((error) => console.log("error", error));
     });
   }, []);
@@ -43,7 +43,6 @@ function App() {
       // toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })
     }
   }, [data]);
-  console.log(time)
 
   // °C to °F
   function changeUnits() {

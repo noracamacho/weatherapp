@@ -12,6 +12,7 @@ function App() {
   const [units, setUnits] = useState('metric'); 
   const [icon, setIcon] = useState('');
   const [temp, setTemp] = useState(0);
+  const [tempFeelsLike, setTempFeelsLike] = useState(0);
   const [img, setImg] = useState('');
 
   useEffect(() => {
@@ -31,7 +32,8 @@ function App() {
     if(data) {
       console.log(data);
       setIcon(data?.weather?.[0].icon);
-      setTemp(data.main?.temp.toFixed());
+      setTemp(data.main?.temp.toFixed(0));
+      setTempFeelsLike(data?.main?.feels_like.toFixed(0))
       setImg(data?.weather?.[0].main + data?.weather?.[0].icon);
       // console.log(img);
     }
@@ -43,26 +45,29 @@ function App() {
    // °C to °F
  function changeUnits() {
   let currentTemp;
+  let feelsLikeTemp;
     if(units === 'metric') {
       currentTemp = (temp * 9 / 5) +32;
+      feelsLikeTemp = (tempFeelsLike * 9 / 5) +32;
       setTemp(currentTemp.toFixed());
-      // console.log('f',temp);
+      setTempFeelsLike(feelsLikeTemp.toFixed());
       setUnits('imperial');
     } else {
       currentTemp = (temp - 32) * (5/9);
+      feelsLikeTemp = (tempFeelsLike - 32) * (5/9);
       setTemp(currentTemp.toFixed());
-      // console.log('c', temp);
+      setTempFeelsLike(feelsLikeTemp.toFixed());
       setUnits('metric');
     }
   }
 
-  let date = new Date();
-  console.log(date.toISOString().split('T')[0])
+  // let date = new Date();
+  // console.log(date.toISOString().split('T')[0])
   
   return (
     <div className='app' style={{  
-      backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.35), 
-      rgba(0, 0, 0, 0.35)), url(${backgroundImages[icon]})`,
+      backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.45), 
+      rgba(0, 0, 0, 0.45)), url(${backgroundImages[icon]})`,
       backgroundPosition: 'center',
       backgroundSize: 'cover',
       backgroundRepeat: 'no-repeat'
@@ -78,7 +83,7 @@ function App() {
           <div className="temp">
             <h1>{temp}{units === 'imperial' ? '°F' : '°C'}</h1>
             {
-              icon && (<img className='iconImage' src={`http://openweathermap.org/img/wn/${icon}@2x.png`} alt="" />)
+              icon && (<img className='iconImage' src={`http://openweathermap.org/img/wn/${icon}@2x.png`} alt="weather icon" />)
             }
           </div>
             <div className="despcription">
@@ -86,7 +91,12 @@ function App() {
             </div>
         </div>
         <div className="bottom">
-          <div className="feels">
+        <div className="feels">
+            <i className='wi wi-thermometer-exterior'></i>
+            <p className='bold'>{tempFeelsLike}{units === 'imperial' ? '°F' : '°C'}</p>
+            <p>Feels</p>
+          </div>
+          <div className="clouds">
             <i className='wi wi-cloud'></i>
             <p className='bold'>{data.clouds?.all}%</p>
             <p>Clouds</p>
@@ -97,7 +107,7 @@ function App() {
             <p>Humidity</p>
           </div>
           <div className="wind">
-            <i className='wi wi-strong-wind'></i>
+            <i className='wi wi-strong-wind' style={{fontWeight: 'bold'}}></i>
             <p className='bold'>{data?.wind?.speed.toFixed()}m/s</p>
             <p>Wind Speed</p>
           </div>

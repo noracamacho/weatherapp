@@ -12,7 +12,8 @@
   /* ************************************ */
   
   p {
-    font-size: 1.1rem;
+    font-size: 1rem;
+    font-weight: bold;
   }
   h1 {
     font-size: 5rem;
@@ -70,7 +71,7 @@
   }
   
   .app .top {
-    width: 90%;
+    width: 93%;
     margin: 1rem auto;
     text-align: center;
     align-content: center;
@@ -128,7 +129,7 @@
     display: flex;
     justify-content: space-evenly;
     text-align: center;
-    width: 90%;
+    width: 93%;
     margin: .7rem auto;
     padding: 1rem;
     padding-inline: .6rem;

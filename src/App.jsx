@@ -40,6 +40,8 @@ function App() {
       setTime(new Date(data.dt * 1000).toLocaleString('en-us', { hour: "numeric", minute: "2-digit" }));
     }
   }, [data]);
+  console.log(temp);
+  console.log(tempFeelsLike)
  
   useEffect(() => {
     if(icon) {
@@ -89,30 +91,26 @@ function App() {
             </div>
             <div className="bottom">
               <div className="feels">
-                {
-                (tempFeelsLike < temp) ? <i class="fa-solid fa-temperature-arrow-down"></i> : 
-                ((tempFeelsLike == temp) ? <i class="fa-solid fa-temperature-full"></i> : 
-                <i class="fa-solid fa-temperature-arrow-up"></i>)
-                }
+                <i className="fa-solid fa-temperature-full"></i> 
                 {/* <i className="wi wi-thermometer-exterior"></i> */}
                 <p className="bold">{tempFeelsLike}{units === "imperial" ? "°F" : "°C"}</p>
                 <p>Feels</p>
               </div>
               <div className="clouds">
                 {/* <i className="wi wi-cloud"></i> */}
-                <i class="fa-solid fa-cloud"></i>
+                <i className="fa-solid fa-cloud"></i>
                 <p className="bold">{data.clouds?.all}%</p>
                 <p>Clouds</p>
               </div>
               <div className="humidity">
                 {/* <i className="wi wi-sprinkle"></i> */}
-                <i class="fa-solid fa-droplet"></i>
+                <i className="fa-solid fa-droplet"></i>
                 <p className="bold">{data?.main?.humidity}%</p>
                 <p>Humidity</p>
               </div>
               <div className="wind">
                 {/* <i className="wi wi-strong-wind"></i> */}
-                <i class="fa-solid fa-wind"></i>
+                <i className="fa-solid fa-wind"></i>
                 <p className="bold">{data?.wind?.speed.toFixed()}m/s</p>
                 <p>Wind</p>
               </div>

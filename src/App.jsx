@@ -37,7 +37,7 @@ function App() {
       setTemp(data.main?.temp.toFixed(0));
       setTempFeelsLike(data?.main?.feels_like.toFixed(0));
       setCurrentDate(new Date(data.dt * 1000).toLocaleString('en-us', {  weekday: 'long', year: "numeric", month: "long", day: "numeric" }));
-      setTime(new Date(data.dt * 1000).toLocaleString('en-us', { hour: "2-digit", minute: "2-digit" }));
+      setTime(new Date(data.dt * 1000).toLocaleString('en-us', { hour: "numeric", minute: "2-digit" }));
     }
   }, [data]);
  
@@ -76,7 +76,7 @@ function App() {
               </div>
               <div className="date__time">
                 <p>{currentDate}</p>
-                <p>{time}</p>
+                <p className="time">{time}</p>
               </div>
               <div className="temp">
                 <h1>{temp}{units === "imperial" ? "°F" : "°C"}</h1>
@@ -89,22 +89,30 @@ function App() {
             </div>
             <div className="bottom">
               <div className="feels">
-                <i className="wi wi-thermometer-exterior"></i>
+                {
+                (tempFeelsLike < temp) ? <i class="fa-solid fa-temperature-arrow-down"></i> : 
+                ((tempFeelsLike == temp) ? <i class="fa-solid fa-temperature-full"></i> : 
+                <i class="fa-solid fa-temperature-arrow-up"></i>)
+                }
+                {/* <i className="wi wi-thermometer-exterior"></i> */}
                 <p className="bold">{tempFeelsLike}{units === "imperial" ? "°F" : "°C"}</p>
                 <p>Feels</p>
               </div>
               <div className="clouds">
-                <i className="wi wi-cloud"></i>
+                {/* <i className="wi wi-cloud"></i> */}
+                <i class="fa-solid fa-cloud"></i>
                 <p className="bold">{data.clouds?.all}%</p>
                 <p>Clouds</p>
               </div>
               <div className="humidity">
-                <i className="wi wi-sprinkle"></i>
+                {/* <i className="wi wi-sprinkle"></i> */}
+                <i class="fa-solid fa-droplet"></i>
                 <p className="bold">{data?.main?.humidity}%</p>
                 <p>Humidity</p>
               </div>
               <div className="wind">
-                <i className="wi wi-strong-wind"></i>
+                {/* <i className="wi wi-strong-wind"></i> */}
+                <i class="fa-solid fa-wind"></i>
                 <p className="bold">{data?.wind?.speed.toFixed()}m/s</p>
                 <p>Wind</p>
               </div>

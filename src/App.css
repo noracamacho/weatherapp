@@ -37,7 +37,7 @@
     height: 100vh;
     position: relative;
     /* background-image: url('../src/images/sunset.jpg') !important; */
-    background-color: rgba(154, 154, 154, 0.4);
+    background-color: rgba(154, 154, 154, 0.3);
     color: whitesmoke;
     background-repeat: no-repeat;
     background-size: cover;
@@ -82,7 +82,7 @@
     flex-direction: column;
     justify-content: space-between;
     align-content: center;
-    background-color: hsla(0, 0%, 100%, 0.3);
+    background-color: hsla(0, 0%, 100%, 0.25);
     border-radius: 12px;
     margin-bottom: 7rem;
   }
@@ -135,14 +135,26 @@
     font-size: 1.1rem;
     font-weight: bold;
     max-height: 3rem;
+    margin-bottom: 1rem;
+  }
+  .time {
+    background-color: rgb(245, 245, 245);
+    width:max-content;
+    padding-inline: 10px;
+    border-radius: 5px;
+    /* align-self: center; */
+    margin: 0 auto;
+    color: rgba(12, 12, 12, 0.892) !important;
+    /* font-weight:bold !important; */
+
   }
   .temp {
     height: 15rem;
   }
 
-  .wi {
+  .wi, .fa-solid {
     font-weight: bold;
-    font-size: 1.5rem;
+    font-size: 1.4rem;
   }
   
   .iconImage {

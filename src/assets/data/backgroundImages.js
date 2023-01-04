@@ -36,7 +36,7 @@ const backgroundImages = {
         '13d': snow13d,
         '13n': snow13n,
         '50d': mist50d,
-        '50d': mist50n
+        '50n': mist50n
 }
 
 export default backgroundImages

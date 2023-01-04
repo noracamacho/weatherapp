@@ -11,7 +11,6 @@
   
   /* ************************************ */
   Spinner {
-    background-color: black !important;
     width: 100vw;
     height: 100vh;
   }
@@ -23,6 +22,7 @@
   }
   h1 {
     font-size: 5rem;
+    margin-bottom: 1rem;
   }
   .app__spinner {
     width: 100vw;
@@ -37,7 +37,7 @@
     height: 100vh;
     position: relative;
     /* background-image: url('../src/images/sunset.jpg') !important; */
-    background-color: rgba(190, 176, 176, 0.4);
+    background-color: rgba(154, 154, 154, 0.4);
     color: whitesmoke;
     background-repeat: no-repeat;
     background-size: cover;
@@ -74,7 +74,7 @@
   
   .container {
     max-width: 350px;
-    height: 565px;
+    height: 593px;
     margin: 0 auto;
     position: relative;
     top: 10%;
@@ -82,19 +82,20 @@
     flex-direction: column;
     justify-content: space-between;
     align-content: center;
-    background-color: rgba(255, 255, 255, 0.3);
+    background-color: hsla(0, 0%, 100%, 0.3);
     border-radius: 12px;
-    margin-bottom: 6rem;
+    margin-bottom: 7rem;
   }
   
   .app .top {
     width: 98%;
-    margin: 1rem auto;
+    margin: .85rem auto;
     text-align: center;
     align-content: center;
     border-radius: 12px;
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0.3);
     /* margin: 0 auto; */
+    height: 30rem;
   }
 
   .buttons__container {
@@ -108,7 +109,7 @@
   }
   
   button{
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 5px;
     height: 2rem;
     width: 5rem;
@@ -120,10 +121,10 @@
   }
 
   .location p {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     font-weight: bold;
     max-width: 20rem;
-    max-height: 3rem;
+    max-height: 4rem;
     /* margin-bottom: 1rem;  */
   }
 
@@ -168,8 +169,7 @@
     padding: .5rem;
     padding-inline: .2rem;
     border-radius: 12px;
-    background-color: rgba(255, 255, 255, 0.2);
-    bottom: 10px;
+    background-color: rgba(255, 255, 255, 0.3);
   }
   
   .bold {

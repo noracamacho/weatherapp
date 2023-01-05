@@ -1,2 +1,1 @@
-# RickAndMorty
 # weatherapp

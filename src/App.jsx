@@ -18,6 +18,7 @@ function App() {
   const [currentDate, setCurrentDate] = useState(0);
   const [time, setTime] = useState(0);
   const [iconImage, setIconImage] = useState();
+  const [backgroundImg, setBackgroundImg] = useState('');
 
   useEffect(() => {
     navigator.geolocation.getCurrentPosition((pos) => {
@@ -46,8 +47,10 @@ function App() {
   useEffect(() => {
     if(icon) {
       setIconImage(`https://openweathermap.org/img/wn/${icon}@2x.png`);
+      setBackgroundImg(`${backgroundImages[icon]}`);
     }
   }, [icon])
+  console.log(backgroundImg);
 
   // °C to °F
   function changeUnits() {
@@ -67,7 +70,7 @@ function App() {
       {!iconImage ? (
         <SpinnerC />
       ) : (
-        <div className="app" style={{ backgroundImage: `linear-gradient(rgba(30, 30, 30, 0.45), rgba(30, 30, 30, 0.45)), url(${backgroundImages[icon]})`}}>
+        <div className="app" style={{ backgroundImage: `linear-gradient(rgba(30, 30, 30, 0.45), rgba(30, 30, 30, 0.45)), url(${backgroundImg})`}}>
           <div className="container">
             <div className="top">
               <div className="buttons__container">

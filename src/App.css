@@ -235,7 +235,7 @@
   }
   @media screen and (max-width: 1024px) and (max-height: 600px) {
     .container {
-      top: 1%;
+      top: 2%;
     }
     .app .top {
       margin: .5rem auto;

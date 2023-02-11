@@ -194,9 +194,10 @@
   .footer {
     display: flex;
     flex-direction: column;
-    position: relative;
+    position: absolute;
     /* bottom: -6rem; */
     text-align: center;
+    bottom: .5rem;
   }
 
   .footer p {
@@ -212,4 +213,24 @@
     font-weight: bold;
     cursor: pointer;
     word-spacing: normal;
+  }
+
+  @media screen and (max-width: 400px){
+    .container {
+      top: 2%;
+      margin-bottom: 0;
+    }
+    .footer {
+      transform: translateX(10%);
+      bottom: .3rem;
+    }
+    .footer p {
+      font-size: .7rem;
+      word-spacing: 1px;
+    }
+  
+    .footer p a {
+      font-size: .8rem;
+    }
+  
   }

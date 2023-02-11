@@ -36,7 +36,6 @@
     width: 100vw;
     height: 100vh;
     position: relative;
-    /* background-image: url('../src/images/sunset.jpg') !important; */
     background-color: rgba(154, 154, 154, 0.3);
     color: whitesmoke;
     background-repeat: no-repeat;
@@ -84,7 +83,6 @@
     align-content: center;
     background-color: hsla(0, 0%, 100%, 0.25);
     border-radius: 12px;
-    margin-bottom: 7rem;
   }
   
   .app .top {
@@ -94,8 +92,6 @@
     align-content: center;
     border-radius: 12px;
     background-color: rgba(255, 255, 255, 0.2);
-    /* margin: 0 auto; */
-    /* height: 28rem; */
     height: fit-content;
   }
 
@@ -118,7 +114,6 @@
     font-size: 1rem;
     font-weight: 600;
     padding-inline: .5rem;
-    /* margin-bottom: 0; */
   }
 
   .location p {
@@ -126,7 +121,6 @@
     font-weight: bold;
     max-width: 20rem;
     max-height: 4rem;
-    /* margin-bottom: 1rem;  */
   }
 
   .date__time {
@@ -143,11 +137,8 @@
     width:max-content;
     padding-inline: 10px;
     border-radius: 5px;
-    /* align-self: center; */
     margin: 0 auto;
     color: rgba(86, 84, 84, 0.892) !important;
-    /* font-weight:bold !important; */
-
   }
   .temp {
     height: 15rem;
@@ -194,10 +185,10 @@
   .footer {
     display: flex;
     flex-direction: column;
+    width: 100%;
     position: absolute;
-    /* bottom: -6rem; */
+    bottom: 1rem;
     text-align: center;
-    bottom: .5rem;
   }
 
   .footer p {
@@ -214,24 +205,18 @@
     cursor: pointer;
     word-spacing: normal;
   }
-
-  @media screen and (max-width: 400px){
+  @media screen and (max-width: 389px){
     .container {
-      top: 2%;
-      margin-bottom: 0;
+      top: 0.3rem;
     }
     .footer {
-      display: none;
-      /* transform: translateX(10%);
-      bottom: .3rem; */
+      bottom: 0.2rem;
     }
-    /* .footer p {
+    .footer p {
       font-size: .7rem;
-      word-spacing: 1px;
+      word-spacing: normal;
     }
-
     .footer p a {
       font-size: .8rem;
-    } */
-  
+    }
   }

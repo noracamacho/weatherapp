@@ -221,16 +221,17 @@
       margin-bottom: 0;
     }
     .footer {
-      transform: translateX(10%);
-      bottom: .3rem;
+      display: none;
+      /* transform: translateX(10%);
+      bottom: .3rem; */
     }
-    .footer p {
+    /* .footer p {
       font-size: .7rem;
       word-spacing: 1px;
     }
-  
+
     .footer p a {
       font-size: .8rem;
-    }
+    } */
   
   }

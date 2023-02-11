@@ -26,14 +26,14 @@ function App() {
       let lon = pos.coords.longitude;
       axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${idKey}&units=${units}`)
         .then((response) => setData(response.data))
-        .then(console.log(data))
+        // .then(console.log(data))
         .catch((error) => console.log("error", error));
     });
   }, []);
 
   useEffect(() => {
     if (data) {
-      console.log(data);
+      // console.log(data);
       setIcon(data?.weather?.[0].icon);
       setTemp(data.main?.temp.toFixed(0));
       setTempFeelsLike(data?.main?.feels_like.toFixed(0));
@@ -41,8 +41,8 @@ function App() {
       setTime(new Date(data.dt * 1000).toLocaleString('en-us', { hour: "numeric", minute: "2-digit" }));
     }
   }, [data]);
-  console.log(temp);
-  console.log(tempFeelsLike)
+  // console.log(temp);
+  // console.log(tempFeelsLike)
  
   useEffect(() => {
     if(icon) {
@@ -50,7 +50,7 @@ function App() {
       setBackgroundImg(`${backgroundImages[icon]}`);
     }
   }, [icon])
-  console.log(backgroundImg);
+  // console.log(backgroundImg);
 
   // °C to °F
   function changeUnits() {

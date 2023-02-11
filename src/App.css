@@ -205,6 +205,11 @@
     cursor: pointer;
     word-spacing: normal;
   }
+  @media screen and (max-width: 540px){
+    .container {
+      top: 5%;
+    }
+  }
   @media screen and (max-width: 389px){
     .container {
       top: 0.3rem;
@@ -218,5 +223,28 @@
     }
     .footer p a {
       font-size: .8rem;
+    }
+  }
+  @media screen and (max-width: 360px){
+    .container{
+      top: 2%;
+    }
+    .footer {
+      display: none;
+    }
+  }
+  @media screen and (max-width: 1024px) and (max-height: 600px) {
+    .container {
+      top: 1%;
+    }
+    .app .top {
+      margin: .5rem auto;
+      text-align: center;
+    }
+    .app .bottom {
+      margin: .3rem auto;
+    }
+    .footer {
+      display: none;
     }
   }

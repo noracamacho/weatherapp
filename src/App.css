@@ -227,7 +227,7 @@
   }
   @media screen and (max-width: 360px){
     .container{
-      top: 2%;
+      top: 3%;
     }
     .footer {
       display: none;
